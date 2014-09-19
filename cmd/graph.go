@@ -176,9 +176,10 @@ func aptlyGraph(cmd *commander.Command, args []string) error {
 		return err
 	}
 
+	fmt.Printf("Rendered to PNG file: %s\n", tempfilename)
+
 	err = exec.Command("open", tempfilename).Run()
 	if err != nil {
-		fmt.Printf("Rendered to PNG file: %s\n", tempfilename)
 		err = nil
 	}
 
